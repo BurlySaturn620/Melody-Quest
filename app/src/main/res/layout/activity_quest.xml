@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Melody Quest: Quest Log (level, daily quests, achievements). -->
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:liftOnScroll="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="@string/quest_log"
+            app:titleTextAppearance="@style/ToolbarTextAppearance.Melody" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/melody_screen_margin"
+            android:paddingEnd="@dimen/melody_screen_margin">
+
+            <!-- Character sheet -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/headerCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="@dimen/m3_card_medium_radius"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:fontFamily="?attr/melodyDisplayFont"
+                        app:fontFamily="?attr/melodyDisplayFont"
+                        android:id="@+id/levelBadge"
+                        android:layout_width="76dp"
+                        android:layout_height="76dp"
+                        android:background="@drawable/melody_level_badge"
+                        android:gravity="center"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        tools:text="7" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:fontFamily="?attr/melodyDisplayFont"
+                        app:fontFamily="?attr/melodyDisplayFont"
+                        android:id="@+id/rankText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textAppearance="@style/TextAppearance.Melody.SectionTitle"
+                        tools:text="Level 7 · Wanderer" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:fontFamily="?attr/melodyDisplayFont"
+                        app:fontFamily="?attr/melodyDisplayFont"
+                        android:id="@+id/totalXpText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Melody.Eyebrow"
+                        android:textColor="?android:attr/textColorSecondary"
+                        tools:text="840 XP total" />
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/xpBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        app:trackCornerRadius="4dp"
+                        app:trackThickness="8dp"
+                        tools:progress="60" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/xpText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textAppearance="@style/TextViewCaption"
+                        android:textColor="?android:attr/textColorSecondary"
+                        tools:text="240 / 700 XP to next level" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/statsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextViewBody2"
+                        tools:text="123 songs · 8 h 20 min listened · 4 achievements" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/streakText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textAppearance="@style/TextViewBody2"
+                        android:textStyle="bold"
+                        tools:text="🔥 4-day streak" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/disabledText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/quest_disabled"
+                android:textAppearance="@style/TextViewBody2"
+                android:visibility="gone" />
+
+            <!-- While you were away -->
+            <com.google.android.material.textview.MaterialTextView
+                android:fontFamily="?attr/melodyDisplayFont"
+                app:fontFamily="?attr/melodyDisplayFont"
+                android:id="@+id/newsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="24dp"
+                android:paddingBottom="8dp"
+                android:text="@string/quest_news_title"
+                android:textAppearance="@style/TextAppearance.Melody.SectionTitle"
+                android:visibility="gone" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/newsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="6dp"
+                android:textAppearance="@style/TextViewBody2"
+                android:visibility="gone" />
+
+            <!-- Daily quests -->
+            <com.google.android.material.textview.MaterialTextView
+                android:fontFamily="?attr/melodyDisplayFont"
+                app:fontFamily="?attr/melodyDisplayFont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="24dp"
+                android:text="@string/quest_daily_title"
+                android:textAppearance="@style/TextAppearance.Melody.SectionTitle" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/dailySubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="2dp"
+                android:paddingBottom="8dp"
+                android:textAppearance="@style/TextViewCaption"
+                android:textColor="?android:attr/textColorSecondary"
+                tools:text="New quests every day at midnight." />
+
+            <LinearLayout
+                android:id="@+id/dailyContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <!-- Achievements -->
+            <com.google.android.material.textview.MaterialTextView
+                android:fontFamily="?attr/melodyDisplayFont"
+                app:fontFamily="?attr/melodyDisplayFont"
+                android:id="@+id/achievementsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="24dp"
+                android:paddingBottom="8dp"
+                android:textAppearance="@style/TextAppearance.Melody.SectionTitle"
+                tools:text="Achievements (4/13)" />
+
+            <LinearLayout
+                android:id="@+id/achievementsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

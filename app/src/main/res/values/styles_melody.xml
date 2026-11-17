@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Melody Quest design language.
+
+  These overlays are applied on top of whichever base theme the user picked
+  (see AbsThemeActivity#updateTheme / ThemeManager#getMelodyThemeOverlay), so
+  the look stays consistent across Light / Dark / Black / Follow-system and
+  Material You without duplicating every base theme.
+
+  ThemeOverlay.Melody          -> shapes + component styles only (used with Material You)
+  ThemeOverlay.Melody.Light    -> + paper surfaces, ember accent
+  ThemeOverlay.Melody.Dark     -> + ink surfaces, ember accent
+  ThemeOverlay.Melody.Black    -> + pure black surfaces, ember accent
+  ThemeOverlay.Melody.DayNight -> Light here, Dark in values-night
+
+  Neon (gamer) style, the default: same components, different palette and display font.
+  ThemeOverlay.Melody.NeonDark / NeonBlack / NeonLight / NeonDayNight
+-->
+<resources>
+
+    <!-- ===================== Components & shapes ===================== -->
+    <style name="ThemeOverlay.Melody" parent="">
+        <item name="materialCardViewStyle">@style/Widget.Melody.CardView</item>
+        <item name="bottomNavigationStyle">@style/Widget.Melody.BottomNavigationView</item>
+        <item name="navigationRailStyle">@style/Widget.Melody.NavigationRailView</item>
+        <item name="shapeAppearanceCornerExtraSmall">@style/ShapeAppearance.Melody.ExtraSmall</item>
+        <item name="shapeAppearanceCornerSmall">@style/ShapeAppearance.Melody.Small</item>
+        <item name="shapeAppearanceCornerMedium">@style/ShapeAppearance.Melody.Medium</item>
+        <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.Melody.Large</item>
+        <item name="shapeAppearanceCornerExtraLarge">@style/ShapeAppearance.Melody.ExtraLarge</item>
+        <item name="melodyDisplayFont">@font/melody</item>
+    </style>
+
+    <!-- ===================== Colour variants ===================== -->
+    <style name="ThemeOverlay.Melody.Dark">
+        <item name="colorPrimary">@color/melody_ember_soft</item>
+        <item name="colorOnPrimary">#3A1300</item>
+        <item name="colorPrimaryContainer">#5A2410</item>
+        <item name="colorOnPrimaryContainer">#FFDBCC</item>
+        <item name="colorSecondary">@color/melody_gold</item>
+        <item name="colorOnSecondary">#412D00</item>
+        <item name="colorSecondaryContainer">#3A2C24</item>
+        <item name="colorOnSecondaryContainer">#F2DED3</item>
+        <item name="colorTertiary">@color/melody_gold</item>
+        <item name="colorSurface">@color/melody_night_surface</item>
+        <item name="colorSurfaceVariant">@color/melody_night_container_highest</item>
+        <item name="colorSurfaceContainerLowest">@color/melody_night_container_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/melody_night_container_low</item>
+        <item name="colorSurfaceContainer">@color/melody_night_container</item>
+        <item name="colorSurfaceContainerHigh">@color/melody_night_container_high</item>
+        <item name="colorSurfaceContainerHighest">@color/melody_night_container_highest</item>
+        <item name="colorOnSurface">@color/melody_night_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/melody_night_on_surface_variant</item>
+        <item name="colorOutline">@color/melody_night_outline</item>
+        <item name="colorOutlineVariant">@color/melody_night_outline_variant</item>
+        <item name="android:colorBackground">@color/melody_night_surface</item>
+        <item name="android:windowBackground">@color/melody_night_surface</item>
+    </style>
+
+    <style name="ThemeOverlay.Melody.Black" parent="ThemeOverlay.Melody.Dark">
+        <item name="colorSurface">@color/blackColorSurface</item>
+        <item name="colorSurfaceVariant">@color/melody_black_container_highest</item>
+        <item name="colorSurfaceContainerLowest">@color/melody_black_container_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/melody_black_container_low</item>
+        <item name="colorSurfaceContainer">@color/melody_black_container</item>
+        <item name="colorSurfaceContainerHigh">@color/melody_black_container_high</item>
+        <item name="colorSurfaceContainerHighest">@color/melody_black_container_highest</item>
+        <item name="android:colorBackground">@color/blackColorSurface</item>
+        <item name="android:windowBackground">@color/blackColorSurface</item>
+    </style>
+
+    <style name="ThemeOverlay.Melody.Light">
+        <item name="colorPrimary">@color/melody_ember</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">#FFDBCC</item>
+        <item name="colorOnPrimaryContainer">#3A1300</item>
+        <item name="colorSecondary">@color/melody_ember_deep</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorSecondaryContainer">#F6E0D4</item>
+        <item name="colorOnSecondaryContainer">#2B160B</item>
+        <item name="colorTertiary">@color/melody_ember_deep</item>
+        <item name="colorSurface">@color/melody_day_surface</item>
+        <item name="colorSurfaceVariant">@color/melody_day_container_highest</item>
+        <item name="colorSurfaceContainerLowest">@color/melody_day_container_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/melody_day_container_low</item>
+        <item name="colorSurfaceContainer">@color/melody_day_container</item>
+        <item name="colorSurfaceContainerHigh">@color/melody_day_container_high</item>
+        <item name="colorSurfaceContainerHighest">@color/melody_day_container_highest</item>
+        <item name="colorOnSurface">@color/melody_day_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/melody_day_on_surface_variant</item>
+        <item name="colorOutline">@color/melody_day_outline</item>
+        <item name="colorOutlineVariant">@color/melody_day_outline_variant</item>
+        <item name="android:colorBackground">@color/melody_day_surface</item>
+        <item name="android:windowBackground">@color/melody_day_surface</item>
+    </style>
+
+    <!-- Resolved per uiMode: Light here, Dark in values-night/styles_melody.xml -->
+    <style name="ThemeOverlay.Melody.DayNight" parent="ThemeOverlay.Melody.Light" />
+
+    <!-- ===================== Neon (gamer) style ===================== -->
+    <style name="ThemeOverlay.Melody.NeonDark">
+        <item name="melodyDisplayFont">@font/neon_display</item>
+        <!-- Stronger (coloured) shadows so the neon glow on the play button / badges shows. -->
+        <item name="android:ambientShadowAlpha">0.3</item>
+        <item name="android:spotShadowAlpha">0.65</item>
+        <item name="colorPrimary">@color/neon_cyan</item>
+        <item name="colorOnPrimary">#00262C</item>
+        <item name="colorPrimaryContainer">#003B44</item>
+        <item name="colorOnPrimaryContainer">#A6F6FF</item>
+        <item name="colorSecondary">@color/neon_magenta</item>
+        <item name="colorOnSecondary">#3D0030</item>
+        <item name="colorSecondaryContainer">#2B1236</item>
+        <item name="colorOnSecondaryContainer">#FFD7F4</item>
+        <item name="colorTertiary">@color/neon_lime</item>
+        <item name="colorSurface">@color/neon_night_surface</item>
+        <item name="colorSurfaceVariant">@color/neon_night_container_highest</item>
+        <item name="colorSurfaceContainerLowest">@color/neon_night_container_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/neon_night_container_low</item>
+        <item name="colorSurfaceContainer">@color/neon_night_container</item>
+        <item name="colorSurfaceContainerHigh">@color/neon_night_container_high</item>
+        <item name="colorSurfaceContainerHighest">@color/neon_night_container_highest</item>
+        <item name="colorOnSurface">@color/neon_night_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/neon_night_on_surface_variant</item>
+        <item name="colorOutline">@color/neon_night_outline</item>
+        <item name="colorOutlineVariant">@color/neon_night_outline_variant</item>
+        <item name="android:colorBackground">@color/neon_night_surface</item>
+        <item name="android:windowBackground">@color/neon_night_surface</item>
+    </style>
+
+    <style name="ThemeOverlay.Melody.NeonBlack" parent="ThemeOverlay.Melody.NeonDark">
+        <item name="colorSurface">@color/blackColorSurface</item>
+        <item name="colorSurfaceVariant">@color/melody_black_container_highest</item>
+        <item name="colorSurfaceContainerLowest">@color/melody_black_container_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/melody_black_container_low</item>
+        <item name="colorSurfaceContainer">@color/melody_black_container</item>
+        <item name="colorSurfaceContainerHigh">@color/melody_black_container_high</item>
+        <item name="colorSurfaceContainerHighest">@color/melody_black_container_highest</item>
+        <item name="android:colorBackground">@color/blackColorSurface</item>
+        <item name="android:windowBackground">@color/blackColorSurface</item>
+    </style>
+
+    <style name="ThemeOverlay.Melody.NeonLight">
+        <item name="melodyDisplayFont">@font/neon_display</item>
+        <item name="colorPrimary">@color/neon_cyan_deep</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">#B8F3FA</item>
+        <item name="colorOnPrimaryContainer">#002024</item>
+        <item name="colorSecondary">@color/neon_magenta_deep</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorSecondaryContainer">#FBD9F1</item>
+        <item name="colorOnSecondaryContainer">#3A0030</item>
+        <item name="colorTertiary">@color/neon_magenta_deep</item>
+        <item name="colorSurface">@color/neon_day_surface</item>
+        <item name="colorSurfaceVariant">@color/neon_day_container_highest</item>
+        <item name="colorSurfaceContainerLowest">@color/neon_day_container_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/neon_day_container_low</item>
+        <item name="colorSurfaceContainer">@color/neon_day_container</item>
+        <item name="colorSurfaceContainerHigh">@color/neon_day_container_high</item>
+        <item name="colorSurfaceContainerHighest">@color/neon_day_container_highest</item>
+        <item name="colorOnSurface">@color/neon_day_on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/neon_day_on_surface_variant</item>
+        <item name="colorOutline">@color/neon_day_outline</item>
+        <item name="colorOutlineVariant">@color/neon_day_outline_variant</item>
+        <item name="android:colorBackground">@color/neon_day_surface</item>
+        <item name="android:windowBackground">@color/neon_day_surface</item>
+    </style>
+
+    <!-- Resolved per uiMode: NeonLight here, NeonDark in values-night/styles_melody.xml -->
+    <style name="ThemeOverlay.Melody.NeonDayNight" parent="ThemeOverlay.Melody.NeonLight" />
+
+    <!-- ===================== Shapes ===================== -->
+    <!-- Softer, "squircle-ish" corners than stock M3 (4/8/12/16/28). -->
+    <style name="ShapeAppearance.Melody.ExtraSmall" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">6dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Melody.Small" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Melody.Medium" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">18dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Melody.Large" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Melody.ExtraLarge" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">32dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Melody.NavIndicator" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Melody.PlayButton" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">28%</item>
+    </style>
+
+    <!-- ===================== Cards ===================== -->
+    <!-- Flat, tonal cards instead of the stock elevated (shadowed) ones. -->
+    <style name="Widget.Melody.CardView" parent="Widget.Material3.CardView.Filled">
+        <item name="cardElevation">0dp</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <!-- ===================== Navigation ===================== -->
+    <style name="Widget.Melody.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:minHeight">@dimen/bottom_nav_height</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.Melody.NavIndicator</item>
+        <item name="itemIconSize">22dp</item>
+        <item name="itemPaddingTop">10dp</item>
+        <item name="itemPaddingBottom">12dp</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.Melody.NavLabel.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.Melody.NavLabel</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="Widget.Melody.NavigationRailView" parent="Widget.Material3.NavigationRailView">
+        <item name="itemActiveIndicatorStyle">@style/Widget.Melody.NavIndicator</item>
+        <item name="itemIconSize">22dp</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.Melody.NavLabel.Active</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.Melody.NavLabel</item>
+    </style>
+
+    <style name="Widget.Melody.NavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:width">60dp</item>
+        <item name="android:height">34dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Melody.NavIndicator</item>
+    </style>
+
+    <style name="TextAppearance.Melody.NavLabel" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="TextAppearance.Melody.NavLabel.Active">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- ===================== Typography helpers ===================== -->
+    <style name="ToolbarTextAppearance.Melody" parent="ToolbarTextAppearanceNormal">
+        <item name="fontFamily">?attr/melodyDisplayFont</item>
+        <item name="android:fontFamily">?attr/melodyDisplayFont</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <!-- Small all-caps label used above section titles ("Your quest", "Recently added"...) -->
+    <style name="TextAppearance.Melody.Eyebrow" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">?attr/melodyDisplayFont</item>
+        <item name="android:fontFamily">?attr/melodyDisplayFont</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.14</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Melody.SectionTitle" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">?attr/melodyDisplayFont</item>
+        <item name="android:fontFamily">?attr/melodyDisplayFont</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.Melody.Greeting" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">?attr/melodyDisplayFont</item>
+        <item name="android:fontFamily">?attr/melodyDisplayFont</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <!-- ===================== Home quick tiles ===================== -->
+    <!-- Icon-on-top tonal tiles that replace the stock 2x2 pill buttons. -->
+    <style name="Widget.Melody.QuickTile" parent="Widget.Material3.Button.TonalButton.Icon">
+        <item name="android:minHeight">84dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:paddingEnd">4dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAppearance">@style/TextViewCaption</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="iconGravity">top</item>
+        <item name="iconPadding">6dp</item>
+        <item name="iconSize">24dp</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Melody.Medium</item>
+    </style>
+
+    <!-- ===================== Player ===================== -->
+    <!-- Rounded-square ("squircle") play/pause; used by every player screen when
+         "circle play button" is off (default). Size is set per layout. -->
+    <style name="Widget.Melody.PlayButton" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="elevation">0dp</item>
+        <item name="pressedTranslationZ">0dp</item>
+        <item name="hoveredFocusedTranslationZ">0dp</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Melody.PlayButton</item>
+    </style>
+
+    <style name="Widget.Melody.Slider" parent="Widget.Material3.Slider">
+        <item name="labelBehavior">gone</item>
+        <item name="thumbHeight">22dp</item>
+        <item name="thumbWidth">5dp</item>
+        <item name="thumbTrackGapSize">5dp</item>
+        <item name="trackHeight">8dp</item>
+        <item name="thumbElevation">0dp</item>
+        <item name="haloRadius">0dp</item>
+    </style>
+</resources>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Melody Quest: level / XP / daily quests card on Home. Tap opens the Quest Log. -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/melody_screen_margin"
+    android:layout_marginTop="14dp"
+    android:layout_marginEnd="@dimen/melody_screen_margin"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="@dimen/m3_card_corner_radius"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:fontFamily="?attr/melodyDisplayFont"
+                app:fontFamily="?attr/melodyDisplayFont"
+                android:id="@+id/questLevelBadge"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/melody_level_badge"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="7" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:fontFamily="?attr/melodyDisplayFont"
+                    app:fontFamily="?attr/melodyDisplayFont"
+                    android:id="@+id/questRank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextViewSubtitle1"
+                    android:textStyle="bold"
+                    tools:text="Level 7 · Wanderer" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/questXpBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:trackCornerRadius="3dp"
+                    app:trackThickness="6dp"
+                    tools:progress="60" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/questXpText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textAppearance="@style/TextViewCaption"
+                    android:textColor="?android:attr/textColorSecondary"
+                    tools:text="340 / 600 XP" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                app:srcCompat="@drawable/ic_keyboard_arrow_right"
+                app:tint="?android:attr/textColorSecondary"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/questSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:textAppearance="@style/TextViewBody2"
+            app:drawableStartCompat="@drawable/ic_flag"
+            tools:text="Daily quests 1/3 · 🔥 4-day streak" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

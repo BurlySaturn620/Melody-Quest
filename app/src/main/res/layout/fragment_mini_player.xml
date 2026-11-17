@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Melody Quest mini player: a floating, accent-tinted "dock card" that sits above the
+  navigation bar, with a two-line title/artist block and a thin progress line along the
+  bottom edge (instead of the stock full-width row with a circular progress ring).
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/miniPlayerCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusable="false"
+        app:cardCornerRadius="@dimen/melody_mini_player_card_radius"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/imageTextContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/image"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/miniPlayerTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:freezesText="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextViewSubtitle2"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textStyle="bold"
+                    tools:text="@tools:sample/lorem/random" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/miniPlayerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextViewCaption"
+                    android:textColor="?android:attr/textColorSecondary"
+                    tools:text="@tools:sample/full_names" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/actionPrevious"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?roundSelector"
+                android:contentDescription="@string/action_previous"
+                android:padding="8dp"
+                app:srcCompat="@drawable/ic_skip_previous"
+                app:tint="?attr/colorControlNormal" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/miniPlayerPlayPauseButton"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/melody_mini_play_background"
+                android:contentDescription="@string/action_play_pause"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_pause"
+                app:tint="?attr/colorControlNormal" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/actionNext"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?roundSelector"
+                android:contentDescription="@string/action_next"
+                android:padding="8dp"
+                app:srcCompat="@drawable/ic_skip_next"
+                app:tint="?attr/colorControlNormal" />
+        </LinearLayout>
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="3dp"
+            app:trackCornerRadius="2dp"
+            app:trackThickness="3dp"
+            tools:progress="40" />
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

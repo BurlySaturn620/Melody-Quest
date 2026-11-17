@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Melody Quest home banner (when "home banner" is enabled). -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/imageContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/melody_screen_margin"
+        android:layout_marginEnd="@dimen/melody_screen_margin"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="4dp"
+        app:cardCornerRadius="@dimen/m3_card_medium_radius"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bannerImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:ignore="ContentDescription"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/melody_banner_scrim"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_percent="0.6" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:fontFamily="?attr/melodyDisplayFont"
+                app:fontFamily="?attr/melodyDisplayFont"
+                android:id="@+id/text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="12dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@string/welcome"
+                android:textAppearance="@style/TextAppearance.Melody.Eyebrow"
+                android:textColor="#CCFFFFFF"
+                app:layout_constraintBottom_toTopOf="@+id/titleWelcome"
+                app:layout_constraintEnd_toStartOf="@+id/userImage"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:fontFamily="?attr/melodyDisplayFont"
+                app:fontFamily="?attr/melodyDisplayFont"
+                android:id="@+id/titleWelcome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="18dp"
+                android:ellipsize="end"
+                android:padding="0dp"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.Melody.Greeting"
+                android:textColor="@color/md_white_1000"
+                android:textSize="26sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/userImage"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="@tools:sample/first_names" />
+
+            <code.name.monkey.retromusic.views.RetroShapeableImageView
+                android:id="@+id/userImage"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginEnd="18dp"
+                android:scaleType="centerCrop"
+                android:transitionName="user_image"
+                app:circleShape="false"
+                app:layout_constraintBottom_toBottomOf="@+id/titleWelcome"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:retroCornerSize="14dp"
+                tools:srcCompat="@tools:sample/avatars" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

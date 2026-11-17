@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Follow-system theme at night: use the ink palette. -->
+    <style name="ThemeOverlay.Melody.DayNight" parent="ThemeOverlay.Melody.Dark" />
+    <style name="ThemeOverlay.Melody.NeonDayNight" parent="ThemeOverlay.Melody.NeonDark" />
+</resources>

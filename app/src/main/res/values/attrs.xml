@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Melody Quest: headline / display typeface, set per style (Melody = Outfit, Neon = Tektur). -->
+    <attr name="melodyDisplayFont" format="reference" />
+
+    <attr name="roundSelector" format="reference" />
+    <attr name="rectSelector" format="reference" />
+    <attr name="defaultFooterColor" format="color" />
+    <attr name="toolbarPopupTheme" format="reference" />
+    <attr name="lineHeightHint" format="dimension" />
+
+    <declare-styleable name="NetworkImageView">
+        <attr name="url_link" format="string" />
+    </declare-styleable>
+
+
+</resources>

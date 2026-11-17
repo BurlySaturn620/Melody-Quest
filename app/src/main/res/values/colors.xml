@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="twenty_percent_black_overlay">#34000000</color>
+    <color name="app_shortcut_default_foreground">#607d8b</color>
+    <color name="app_shortcut_default_background">#f5f5f5</color>
+    <color name="md_indigo_A400">#3D5AFE</color>
+    <color name="black_color">#13141B</color>
+
+    <color name="darkColorPrimary">#13141B</color>
+    <color name="darkColorSurface">#13141B</color>
+
+    <color name="lighterColorSurface">#dddddd</color>
+
+    <color name="blackColorSurface">#000000</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="semi_transparent">#20000000</color>
+    <!-- card colors -->
+    <color name="card_background">#ffffff</color>
+    <color name="card_shadow_1">#d4d4d4</color>
+    <color name="card_shadow_2">#dddddd</color>
+
+    <color name="widget_md3_button_bg_color">@color/lighterColorSurface</color>
+
+    <!-- ============================================================
+         Melody Quest palette
+         ink   = night surfaces, paper = day surfaces,
+         ember = brand accent, gold = secondary highlight.
+         ============================================================ -->
+    <color name="melody_ink">#13141B</color>
+    <color name="melody_paper">#FBF8F4</color>
+    <color name="melody_ember">#E8602C</color>
+    <color name="melody_ember_soft">#FF8A5C</color>
+    <color name="melody_ember_deep">#B8420F</color>
+    <color name="melody_gold">#FFC56B</color>
+    <color name="melody_intro_1">#E8602C</color>
+    <color name="melody_intro_1_dark">#B8420F</color>
+    <color name="melody_intro_2">#D9541F</color>
+    <color name="melody_intro_2_dark">#A23A0D</color>
+    <color name="melody_intro_3">#2B2C40</color>
+    <color name="melody_intro_3_dark">#1B1C2D</color>
+
+    <!-- ============================================================
+         Neon (gamer) palette: space-black surfaces, electric cyan,
+         magenta highlights.
+         ============================================================ -->
+    <color name="neon_cyan">#00E5FF</color>
+    <color name="neon_cyan_deep">#00838F</color>
+    <color name="neon_magenta">#FF3DCB</color>
+    <color name="neon_magenta_deep">#B0108A</color>
+    <color name="neon_lime">#B4FF39</color>
+
+    <color name="neon_night_surface">#0A0B12</color>
+    <color name="neon_night_container_lowest">#06070B</color>
+    <color name="neon_night_container_low">#0F1019</color>
+    <color name="neon_night_container">#141625</color>
+    <color name="neon_night_container_high">#1A1D30</color>
+    <color name="neon_night_container_highest">#22263C</color>
+    <color name="neon_night_on_surface">#E6EBFA</color>
+    <color name="neon_night_on_surface_variant">#A0A8C6</color>
+    <color name="neon_night_outline">#4C5374</color>
+    <color name="neon_night_outline_variant">#272B42</color>
+
+    <color name="neon_day_surface">#F4F6FC</color>
+    <color name="neon_day_container_lowest">#FFFFFF</color>
+    <color name="neon_day_container_low">#EEF1F9</color>
+    <color name="neon_day_container">#E7EBF5</color>
+    <color name="neon_day_container_high">#E0E5F1</color>
+    <color name="neon_day_container_highest">#D8DEEC</color>
+    <color name="neon_day_on_surface">#0E1222</color>
+    <color name="neon_day_on_surface_variant">#4A5270</color>
+    <color name="neon_day_outline">#7D85A3</color>
+    <color name="neon_day_outline_variant">#C7CDE0</color>
+
+    <!-- Night (ink) surface ladder -->
+    <color name="melody_night_surface">#13141B</color>
+    <color name="melody_night_container_lowest">#0E0F14</color>
+    <color name="melody_night_container_low">#17181F</color>
+    <color name="melody_night_container">#1C1D25</color>
+    <color name="melody_night_container_high">#23242D</color>
+    <color name="melody_night_container_highest">#2B2C36</color>
+    <color name="melody_night_on_surface">#EEE9E3</color>
+    <color name="melody_night_on_surface_variant">#B8B2AB</color>
+    <color name="melody_night_outline">#55545E</color>
+    <color name="melody_night_outline_variant">#34343E</color>
+
+    <!-- Pure black (AMOLED) surface ladder -->
+    <color name="melody_black_container_lowest">#000000</color>
+    <color name="melody_black_container_low">#0B0B0E</color>
+    <color name="melody_black_container">#111115</color>
+    <color name="melody_black_container_high">#18181D</color>
+    <color name="melody_black_container_highest">#202026</color>
+
+    <!-- Day (paper) surface ladder -->
+    <color name="melody_day_surface">#FBF8F4</color>
+    <color name="melody_day_container_lowest">#FFFFFF</color>
+    <color name="melody_day_container_low">#F6F2ED</color>
+    <color name="melody_day_container">#F1ECE6</color>
+    <color name="melody_day_container_high">#EBE5DE</color>
+    <color name="melody_day_container_highest">#E5DED6</color>
+    <color name="melody_day_on_surface">#1E1B18</color>
+    <color name="melody_day_on_surface_variant">#5C5650</color>
+    <color name="melody_day_outline">#8D867E</color>
+    <color name="melody_day_outline_variant">#D6CFC7</color>
+</resources>

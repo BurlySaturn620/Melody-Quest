@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Neon style display face: Tektur (SIL Open Font License, see /licenses/Tektur-OFL.txt).
+     One weight only; mapped to both 500 and 700 so bold text doesn't get fake-bolded. -->
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <font
+        android:font="@font/tektur_medium"
+        android:fontStyle="normal"
+        android:fontWeight="500"
+        app:font="@font/tektur_medium"
+        app:fontStyle="normal"
+        app:fontWeight="500" />
+    <font
+        android:font="@font/tektur_medium"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+        app:font="@font/tektur_medium"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
+</font-family>
