@@ -122,6 +122,17 @@ The APK will be in `app/build/outputs/apk/`.
 
 A full list of what was changed from Retro Music Player is in [MELODY_QUEST.md](MELODY_QUEST.md).
 
+## 💛 Support
+If you find Melody Quest useful and would like to support my work, donations are greatly appreciated!
+Life has been a little difficult lately and I've been struggling financially, so any support, no matter
+how small, would genuinely help me out and mean a lot.
+
+Donations are completely optional. Simply enjoying the app is already appreciated. Thank you! 🙏
+
+<a href="https://ko-fi.com/burlysaturn"><img src="https://img.shields.io/badge/Support%20me%20on-Ko--fi-FF5E5B?logo=ko-fi&logoColor=white" alt="Support me on Ko-fi"></a>
+
+👉 https://ko-fi.com/burlysaturn
+
 ## 🗂️ License
 Melody Quest, like Retro Music Player, is released under the
 [GNU General Public License v3.0](LICENSE.md). You're free to use, study, change and share it under
