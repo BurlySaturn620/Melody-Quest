@@ -31,8 +31,8 @@ keeps your sessions fresh, and there's a Neon style when you want the full gamer
 And it stays out of your way while you play: nothing pops up over your game. Anything you unlocked in
 the meantime is waiting for you when you come back.
 
-## 🎯 Our goal
-**Make something interesting while keeping it as lightweight as possible.**
+## 🎯 The goal
+**More features while keeping it as lightweight as possible.**
 
 Every feature has to earn its place, and we try to build it in the lightest way we can:
 - **Local first.** No accounts, no streaming, no ads, no tracking. It plays the music on your device.
